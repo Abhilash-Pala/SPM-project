@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+               <meta charset="UTF-8">
+               <meta name="viewport" content="width=device-width, initial-scale=1.0">
+               <title>Document</title>
+               <Style>
+                .one{
+                  background-color: aquamarine;
+                  border-radius: 18px;
+                }
+                .one:hover{
+                  background-color: bisque;
+                }
+                .two{
+                  margin-top: 50px;
+                  margin-left: 50px;
+                }
+               </Style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    
+    {% for message in messages %}
+     <center><p style="color: #007bff;">{{ messages }}</p></center>
+    {% endfor %}
+   
+  {% endif %}
+{% endwith %}
+<body style="background-color: black;">
+<center>
+  <form method="post"  class="two">
+    <label for="password" style="color: greenyellow;">Email</label>
+<input type="email" name='email'><br/><br/>
+<button type="submit" class="one">Submit</button>
+</form>
+</center>
+               
+</body>
+</html>

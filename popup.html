@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Popup</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.popup-content {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<button onclick="togglePopup()">Open Popup</button>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="togglePopup()">&times;</span>
+    <p>This is a popup!</p>
+  </div>
+</div>
+
+<script>
+function togglePopup() {
+  var popup = document.getElementById("popup");
+  popup.style.display = popup.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+   <style>
+    .form-group{
+        border-radius: 10px;
+
+    }
+    .button{
+        border-radius: 20px;
+        background-color: chocolate;
+    }
+    .button:hover{
+        background-color: darkgoldenrod;
+    }
+    .three{
+        position: absolute;
+                              top: 50%;
+                              left: 30%;
+                              border-color: black;
+                              
+                              transform: translate(-50%, -50%);
+                              padding: 10px 20px;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.form-title {
+    font-size: 30px;
+    color: aquamarine;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.button {
+    background-color: rgb(14, 213, 147);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 18px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+   
+}
+
+.button:hover {
+    background-color: #78d8d1;
+}
+
+.forgot-link {
+    display: block;
+    margin-top: 10px;
+    color: aquamarine;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+   </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    
+    {% for message in messages %}
+     <center><p style="color: #007bff;">{{ messages }}</p></center>
+    {% endfor %}
+   
+  {% endif %}
+{% endwith %}
+<body >
+    <div class="login-container">
+        <!-- <img src="https://c4.wallpaperflare.com/wallpaper/879/986/428/purple-landscape-reflection-dusk-evening-wallpaper-preview.jpg" width="1250px" height="600px">
+        -->
+        <center>
+            <form action="{{url_for('login')}}" method="post"  width=" 200px;" class="three">
+                <h2 style="font-size: 35px;color:aquamarine;"><u>Login</u></h2>
+                <div class="form-group">
+                    <label for="username" style="color: rgb(9, 245, 76);">Email    </label>
+                    <input type="email" id="username" name="email" required><br/><br/>
+                </div>
+                <div class="form-group">
+                    <label for="password"  style="color: rgb(10, 243, 14);">Password</label>
+                    <input type="password" id="password" name="password" required><br/><br/>
+                </div>
+                <button type="submit" class="button">Login</button><br/><br/>
+                <a href="{{url_for('forgot')}}"><button type="forgotpassword" name="fpassword" class="button">forgotpassword</button></a>
+            </form>
+        </center>
+      
+    </div>
+</body> 
+</html>

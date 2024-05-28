@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .one{
+        margin-top:200px;
+        
+      }
+   .two{
+    border-radius: 18px;
+    background-color: aquamarine;
+    padding: 10px;
+    
+   }
+   .two:hover{
+    background-color: #c0ca33;
+   }
+   .th{
+    border-radius: 14px;
+    padding: 15px;
+   }
+   body{
+    background-color: black;
+   }
+   .ab{
+    font-size:23px ;
+   }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    
+    {% for message in messages %}
+     <center><p style="color: #007bff;">{{ messages }}</p></center>
+    {% endfor %}
+   
+  {% endif %}
+{% endwith %}
+<body>
+    <form method="post" class="one">
+        <center>
+          <label style="color:greenyellow" class="ab">Enter OTP</label>
+        <input type="text" name="otp" class="th"><br/><br/>
+        <button class="two">submit</button>
+        </center>
+    </form>
+</body>
+</html>
